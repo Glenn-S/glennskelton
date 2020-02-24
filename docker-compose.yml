@@ -5,4 +5,4 @@ services:
     image: skeltong2/personal-website:1.0.0
     container_name: svc_website
     ports:
-      - 4000:80
+      - 5000:80
