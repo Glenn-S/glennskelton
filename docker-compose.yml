@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+  svc_website:
+    image: skeltong2/personal-website:1.0.0
+    container_name: svc_website
+    ports:
+      - 4000:80
