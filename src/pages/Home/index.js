@@ -8,18 +8,20 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className="ui container">
-        <div className="ui segment">
-          <h2 className="ui center aligned header">
-            Glenn Skelton
-          </h2>
-          <img src={headshot} className="ui circular image" />
-          <div className="ui center aligned">
-            <p>
-              Welocome to my personal site. It is currently under construction right now. Please check back at a later date to see 
-              all of the great content that is coming
-            </p>
+        <div className="ui padded segment"> 
+          <div className="ui container"> 
+            <img src={headshot} className="ui left floated circular image" />
+            <h2 className="ui header">
+              Glenn Skelton
+            </h2> 
           </div>
-        </div>
+          <div className="ui container">
+            <div className="ui raised text container">
+              Welcome to my personal site. It is currently under construction. Please check back at a later date to see 
+              all of the great content that is coming
+            </div>
+          </div>
+        </div>    
       </div>
     );
   }
