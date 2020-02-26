@@ -1,5 +1,5 @@
 import React from 'react';
-//import headshot from '../images/headshot.png';
+import headshot from '../../images/headshot.png';
 
 export default class Home extends React.Component {
 
@@ -8,11 +8,12 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className="ui container">
-        <div className="ui padded segment">
+        <div className="ui segment">
           <h2 className="ui center aligned header">
             Glenn Skelton
           </h2>
-          <div className="">
+          <img src={headshot} className="ui circular image" />
+          <div className="ui center aligned">
             <p>
               Welocome to my personal site. It is currently under construction right now. Please check back at a later date to see 
               all of the great content that is coming

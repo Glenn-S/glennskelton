@@ -16,7 +16,8 @@ RUN yarn build
 ### Stage 2: Production Environment ###
 FROM nginx:1.17.8
 COPY --from=build /usr/src/app/build /usr/share/nginx/html
+COPY ./nginx-conf/default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
-# map internal port 80 to 3000 on the external port
+# map internal port 80 to 3000 on the external portl
