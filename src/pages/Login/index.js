@@ -1,11 +1,11 @@
 import React from 'react';
+import Page from '../../components/Page';
 
 export default class Login extends React.Component {
   render() {
     return (
-      <div className="ui container">
-        <div className="ui padded segment">
-          <h2 className="ui center aligned header">
+      <Page>
+        <h2 className="ui center aligned header">
             Login
           </h2>
           <div className="">
@@ -13,8 +13,7 @@ export default class Login extends React.Component {
               Content coming soon
             </p>
           </div>
-        </div>
-      </div>
+      </Page>
     );
   }
 };
