@@ -10,7 +10,7 @@ export default class Home extends React.Component {
     return (
       <Page>
         <div className="ui container"> 
-          <img src={headshot} className="ui left floated circular image" />
+          <img src={headshot} className="ui left floated circular image" alt="headshot" />
           <h2 className="ui header">
             Glenn Skelton
           </h2> 

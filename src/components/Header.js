@@ -26,18 +26,18 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className="ui secondary pointing menu">
-        <div className={`item ${this.isActive('home')}`} id="home" onClick={this.onSelectNav}>
-          <Link to="/home">Home</Link>
+        <div>
+          <Link to="/home" className={`item ${this.isActive('home')}`} id="home" onClick={this.onSelectNav}>Home</Link>
         </div>
-        <div className={`item ${this.isActive('portfolio')}`} id="portfolio" onClick={this.onSelectNav}>
-          <Link to="/portfolio">Portfolio</Link>
+        <div>
+          <Link to="/portfolio" className={`item ${this.isActive('portfolio')}`} id="portfolio" onClick={this.onSelectNav}>Portfolio</Link>
         </div>
-        <div className={`item ${this.isActive('resume')}`} id="resume" onClick={this.onSelectNav}>
-          <Link to="/resume">Resume</Link>
+        <div>
+          <Link to="/resume" className={`item ${this.isActive('resume')}`} id="resume" onClick={this.onSelectNav}>Resume</Link>
         </div>
         <div className="right menu">
-          <div className={`item ${this.isActive('login')}`} id="login" onClick={this.onSelectNav}>
-            <Link to="/login">Login</Link>
+          <div>
+            <Link to="/login" className={`item ${this.isActive('login')}`} id="login" onClick={this.onSelectNav}>Login</Link>
           </div>
         </div>
       </div>
