@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from '../../components/Page';
+import PageTemplate from '../../components/PageTemplate';
 import headshot from '../../images/headshot.png';
 
 export default class Home extends React.Component {
@@ -8,7 +8,7 @@ export default class Home extends React.Component {
   // <img src={headshot} className="ui medium circular image" /> not working
   render() {
     return (
-      <Page>
+      <PageTemplate>
         <div className="ui container"> 
           <img src={headshot} className="ui left floated circular image" alt="headshot" />
           <h2 className="ui header">
@@ -21,7 +21,7 @@ export default class Home extends React.Component {
             all of the great content that is coming
           </div>
         </div>
-      </Page>
+      </PageTemplate>
     );
   }
 };

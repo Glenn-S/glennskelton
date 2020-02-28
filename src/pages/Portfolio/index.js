@@ -1,10 +1,10 @@
 import React from 'react';
-import Page from '../../components/Page';
+import PageTemplate from '../../components/PageTemplate';
 
 export default class Portfolio extends React.Component {
   render() {
     return (
-      <Page>
+      <PageTemplate>
         <h2 className="ui center aligned header">
           Portfolio
         </h2>
@@ -13,7 +13,7 @@ export default class Portfolio extends React.Component {
             Content coming soon
           </p>
         </div>
-      </Page>
+      </PageTemplate>
     );
   }
 };
