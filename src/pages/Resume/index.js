@@ -44,9 +44,10 @@ export default class Resume extends React.Component {
 };*/
 
 import React, { Component } from "react";
-import { Document, Page, PDFViewer } from "@react-pdf/renderer";
+//import { Document, Page, PDFDownloadLink } from "@react-pdf/renderer";
+//import App from '../../components/App';
 
-export default class App extends Component {
+export default class Resume extends Component {
   state = { numPages: null, pageNumber: 1 };
 
   onDocumentLoadSuccess = ({ numPages }) => {
@@ -68,16 +69,13 @@ export default class App extends Component {
           <button onClick={this.goToNextPage}>Next</button>
         </nav>
 
-        <div style={{ width: 600 }}>
-          <PDFViewer>
-          <Document
-            file="../../files/resume.pdf"
-            onLoadSuccess={this.onDocumentLoadSuccess}
-          >
-            <Page pageNumber={pageNumber} width={600} />
-          </Document>
-          </PDFViewer>
-        </div>
+        <h2 className="ui center aligned header">
+          Resume
+        </h2>
+        <p>
+          Content coming soon
+        </p>
+        
 
         <p>
           Page {pageNumber} of {numPages}
@@ -85,4 +83,12 @@ export default class App extends Component {
       </div>
     );
   }
-}
+};
+
+/*
+<div style={{ width: 600 }}>
+          <PDFDownloadLink document={<App />} fileName="../../files/resume.pdf">
+            {({ blob, url, loading, }) => (loading ? 'Loading document...' : 'Download now!')}
+          </PDFDownloadLink>
+        </div>
+*/
