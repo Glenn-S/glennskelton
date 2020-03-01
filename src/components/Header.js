@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import NavLink from '../components/NavLink';
+import { connect } from 'react-redux';
+import { activeLink } from '../actions';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      active: 'home',
+      activeLink: 'home',
     };
   }
 
@@ -18,7 +19,7 @@ export default class Header extends React.Component {
 
   onSelectNav = (e) => {
     this.setState({
-      active: e.currentTarget.id,
+      activeLink: e.currentTarget.id,
     });
   }
 
@@ -44,3 +45,11 @@ export default class Header extends React.Component {
     );
   }
 };
+
+const mapStateToProps = (state) => {
+  return {
+    activeLink: state.activeLink,
+  };
+}
+
+export default connect(mapStateToProps, {activeLink})(Header);
