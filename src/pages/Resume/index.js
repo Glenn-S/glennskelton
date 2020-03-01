@@ -1,94 +1,43 @@
-/*import React from 'react';
-import PageTemplate from '../../components/PageTemplate';
-import { Document, Page } from '@react-pdf/renderer';
-
-export default class Resume extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      numPages: null,
-      pageNumber: 1
-    };
-  }
-
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({
-      numPages,
-    });
-  }
-
-  render() {
-    const { pageNumber, numPages } = this.state;
-
-    return (
-      <PageTemplate>
-        <h2 className="ui center aligned header">
-          Resume
-        </h2>
-        <div className="">
-          <p>
-           Content coming soon
-          </p>
-          <Document 
-            file="../../files/resume.pdf" 
-            onLoadSuccess={this.onDocumentLoadSuccess}
-          >
-            <Page pageNumber={pageNumber} />
-          </Document>
-          <p>Page {pageNumber} of {numPages} </p>
-        </div>
-      </PageTemplate>
-    );
-  }
-};*/
-
 import React, { Component } from "react";
+//import PDFViewer from '../../components/PDFViewer';
+//import PDFJSBackend from '../../backend/pdfjs';
 //import { Document, Page, PDFDownloadLink } from "@react-pdf/renderer";
 //import App from '../../components/App';
 
 export default class Resume extends Component {
-  state = { numPages: null, pageNumber: 1 };
+  constructor(props) {
+    super(props);
 
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages });
-  };
+    this.state = {
+      resume: '/resume.pdf'
+    }
+  }
 
-  goToPrevPage = () =>
-    this.setState(state => ({ pageNumber: state.pageNumber - 1 }));
-  goToNextPage = () =>
-    this.setState(state => ({ pageNumber: state.pageNumber + 1 }));
-
+  downloadResume = (url, name) => {
+    var link = document.createElement('a');
+    link.href = url;
+    link.click();
+  }
+  
   render() {
-    const { pageNumber, numPages } = this.state;
-
     return (
-      <div>
-        <nav>
-          <button onClick={this.goToPrevPage}>Prev</button>
-          <button onClick={this.goToNextPage}>Next</button>
-        </nav>
-
+      <div style={{ height: "100%" }}>
         <h2 className="ui center aligned header">
           Resume
         </h2>
-        <p>
-          Content coming soon
-        </p>
-        
-
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+        <div className="ui placeholder segment">
+          <div className="ui icon header">
+            <i className="pdf file outline icon"></i>
+          </div>
+          <a href={this.state.resume} download className="ui primary button">Download</a>
+        </div>
       </div>
     );
   }
 };
-
 /*
-<div style={{ width: 600 }}>
-          <PDFDownloadLink document={<App />} fileName="../../files/resume.pdf">
-            {({ blob, url, loading, }) => (loading ? 'Loading document...' : 'Download now!')}
-          </PDFDownloadLink>
-        </div>
+<PDFViewer 
+          backend={PDFJSBackend}
+          src='/resume.pdf'
+        />
 */
