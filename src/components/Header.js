@@ -4,27 +4,31 @@ import { connect } from 'react-redux';
 import { activeLink } from '../actions';
 
 class Header extends React.Component {
+  initialState = { activeLink: 'home'};
+
   constructor(props) {
     super(props);
 
-    this.state = {
-      activeLink: 'home',
-    };
+    this.state = this.initialState;
   }
 
   isActive = (path) => {
-    var active = path === this.state.active ? 'active' : '';
+    var active = path === this.props.activeLink ? 'active' : '';
+    console.log(this.props.activeLink);
     return active;
   }
 
   onSelectNav = (e) => {
-    this.setState({
+    this.props.activeLink(e.currentTarget.id);
+    //console.log(e.currentTarget.id);
+    /*this.setState({
       activeLink: e.currentTarget.id,
-    });
+    });*/
   }
 
+
   // TODO, get the active in className working
-  render() {
+  render(props) {
     return (
       <div className="ui secondary pointing menu">
         <div>

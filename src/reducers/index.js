@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 import { ACTIVE_LINK } from '../actions/definitions';
 
-const activeLinkReducer = (activeLink = null, action) => {
-  if (action.type === ACTIVE_LINK) {
-    return action.payload;
-  } else {
-    return activeLink;
+const activeLinkReducer = (activeLink = 'home', action) => {
+  switch (action.type) {
+    case ACTIVE_LINK:
+      return {
+        actionLink: action.payload,
+      };
+    default:
+      return activeLink;
   }
 };
 
