@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { activeLink } from '../actions';
 
 class Header extends React.Component {
+
   isActive = (path) => {
     var active = path === this.props.isActiveLink ? 'active' : '';
     console.log(this.props.isActiveLink);
