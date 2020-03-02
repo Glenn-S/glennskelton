@@ -4,6 +4,7 @@ import Header from './Header';
 import Home from '../pages/Home';
 import Portfolio from '../pages/Portfolio';
 import Resume from '../pages/Resume';
+import Apps from '../pages/Apps';
 import Login from '../pages/Login';
 
 const App = () => {
@@ -23,6 +24,9 @@ const App = () => {
           </Route>
           <Route path="/resume">
             <Resume />
+          </Route>
+          <Route path="/apps">
+            <Apps />
           </Route>
           <Route path="/login">
             <Login />
