@@ -1,29 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import NavLink from '../components/NavLink';
+import { connect } from 'react-redux';
+import { activeLink } from '../actions';
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      active: 'home',
-    };
-  }
-
+class Header extends React.Component {
   isActive = (path) => {
-    var active = path === this.state.active ? 'active' : '';
+    var active = path === this.props.isActiveLink ? 'active' : '';
+    console.log(this.props.isActiveLink);
+
     return active;
   }
 
   onSelectNav = (e) => {
-    this.setState({
-      active: e.currentTarget.id,
-    });
+    console.log(this.props.isActiveLink);
+    
+    this.props.activeLink(e.currentTarget.id);
+    //console.log(e.currentTarget.id);
+    /*this.setState({
+      activeLink: e.currentTarget.id,
+    });*/
   }
 
+
   // TODO, get the active in className working
-  render() {
+  render(props) {
     return (
       <div className="ui secondary pointing menu">
         <div>
@@ -44,3 +44,11 @@ export default class Header extends React.Component {
     );
   }
 };
+
+const mapStateToProps = (state) => {
+  return {
+    isActiveLink: state.activeLink.isActive,
+  };
+}
+
+export default connect(mapStateToProps, { activeLink })(Header);
