@@ -36,7 +36,7 @@ class Header extends React.Component {
           <Link to="/resume" className={`item ${this.isActive('resume')}`} id="resume" onClick={this.onSelectNav}>Resume</Link>
         </div>
         <div>
-          <Link to="/apps" className={`item ${this.isActive('apps')}`} id="resume" onClick={this.onSelectNav}>Apps</Link>
+          <Link to="/apps" className={`item ${this.isActive('apps')}`} id="apps" onClick={this.onSelectNav}>Apps</Link>
         </div>
         <div className="right menu">
           <div>
