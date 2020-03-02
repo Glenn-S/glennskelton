@@ -4,21 +4,16 @@ import { connect } from 'react-redux';
 import { activeLink } from '../actions';
 
 class Header extends React.Component {
-  initialState = { activeLink: 'home'};
-
-  constructor(props) {
-    super(props);
-
-    this.state = this.initialState;
-  }
-
   isActive = (path) => {
-    var active = path === this.props.activeLink ? 'active' : '';
-    console.log(this.props.activeLink);
+    var active = path === this.props.isActiveLink ? 'active' : '';
+    console.log(this.props.isActiveLink);
+
     return active;
   }
 
   onSelectNav = (e) => {
+    console.log(this.props.isActiveLink);
+    
     this.props.activeLink(e.currentTarget.id);
     //console.log(e.currentTarget.id);
     /*this.setState({
@@ -52,8 +47,8 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    activeLink: state.activeLink,
+    isActiveLink: state.activeLink.isActive,
   };
 }
 
-export default connect(mapStateToProps, {activeLink})(Header);
+export default connect(mapStateToProps, { activeLink })(Header);

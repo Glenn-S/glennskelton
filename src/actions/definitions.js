@@ -1,3 +1,1 @@
-const ACTIVE_LINK = "ACTIVE_LINK";
-
-export { ACTIVE_LINK };
+export const ACTIVE_LINK = "ACTIVE_LINK";
