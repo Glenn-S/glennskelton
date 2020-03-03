@@ -1,7 +1,7 @@
 import { ACTIVE_LINK } from '../actions/definitions';
 
 let path = window.location.pathname.replace('/', '');
-var pathname = path != '' ? path : 'home';
+var pathname = path !== '' ? path : 'home';
 
 const INITIAl_STATE = {
   isActive: pathname
