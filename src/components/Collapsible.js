@@ -26,7 +26,7 @@ export default class Collapsible extends React.Component {
           <i 
             style={{ float: "right" }}
             className="github icon large" 
-            onClick={() => {window.location="https://github.com/Glenn-S/Arkanoid-for-Raspberry-Pi"}}
+            onClick={() => {window.location=this.props.projectLocation}}
             onMouseEnter={() => {document.body.style.cursor="pointer"}}
             onMouseLeave={() => {document.body.style.cursor="default"}}
           />
