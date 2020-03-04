@@ -14,7 +14,7 @@ export default class AppsContent extends React.Component {
 
     console.log(this.state.content);
     return (
-      <div className="ui">
+      <div className="">
         {this.state.content}
       </div>
     );
