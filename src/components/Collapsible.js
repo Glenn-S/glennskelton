@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectTitle from '../components/ProjectTitle';
 
 export default class Collapsible extends React.Component {
   constructor(props) {
@@ -15,11 +16,20 @@ export default class Collapsible extends React.Component {
     });
   }
 
+  // display: inline-block for getting elements on same line
+
   render() {
     return (
-      <div className="ui segment" onClick={this.setToggle}>
-        <div className="">
-          {this.props.title}
+      <div className="ui container" onClick={this.setToggle} style={{ display: "inline-block" }}>
+        <div className="ui floating">
+          <ProjectTitle title={this.props.title} style={{ float: "left"}} />
+          <i 
+            style={{ float: "right" }}
+            className="github icon large" 
+            onClick={() => {window.location=this.props.projectLocation}}
+            onMouseEnter={() => {document.body.style.cursor="pointer"}}
+            onMouseLeave={() => {document.body.style.cursor="default"}}
+          />
         </div>
         <div className="">
           {
@@ -29,6 +39,8 @@ export default class Collapsible extends React.Component {
               <div>
                 {this.props.content}
               </div>
+              <br />
+              <br />
             </div> : 
             null
           }
