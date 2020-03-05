@@ -23,6 +23,12 @@ class GoogleAuth extends React.Component {
   // callback to see if user is still signed in
   onAuthChange = (isSignedIn) => {
     if (isSignedIn) {
+      allowedUsers.forEach(element => {
+        if (element !== this.auth.currentUser.get().getBasicProfile().getEmail()) {
+          alert("You do not have the correct permissions to log in");
+          this.auth.signOut();
+        }
+      });
       this.props.signIn(this.auth.currentUser.get().getId());
     } else {
       this.props.signOut();
@@ -30,14 +36,7 @@ class GoogleAuth extends React.Component {
   }
 
   onSignInClick = () => {
-    //console.log(this.auth.currentUser.get().getBasicProfile().getEmail());
-    allowedUsers.forEach(element => {
-      if (element === this.auth.currentUser.get().getBasicProfile().getEmail()) {
-        this.auth.signIn();
-      } else {
-        alert("You do not have the correct permissions to log in");
-      }
-    });
+    this.auth.signIn();
   }
 
   onSignOutClick = () => {
