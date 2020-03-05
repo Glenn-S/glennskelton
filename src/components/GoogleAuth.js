@@ -60,6 +60,9 @@ class GoogleAuth extends React.Component {
             <h2 className="">
               You have now been authenticated
             </h2>
+            <p>
+              Content coming soon
+            </p>
           </div>
         </div>
         
@@ -76,8 +79,11 @@ class GoogleAuth extends React.Component {
           <br />
           <div>
             <h2 className="">
-              You have not been authenticated
+              You have not been authenticated,
             </h2>
+            <p>
+              Content coming soon
+            </p>
           </div>
         </div>
       );
